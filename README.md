@@ -45,6 +45,33 @@ and `/dev/metis-0:1:0` should appear. Full log at `/tmp/axelera-install.log`.
 > because of BTF processing + ftrace patching of ~110 function entries.
 > The installer uses `timeout 30`; do not shorten it.
 
+### Install the Voyager SDK 1.6.0 runtime (`axdevice`, Python API)
+
+Once the driver is loaded, install the runtime on the board via Axelera's
+public PyPI index:
+
+```bash
+ssh root@<BOARD_IP> 'pip3 install \
+    --index-url https://software.axelera.ai/artifactory/api/pypi/axelera-pypi/simple/ \
+    --extra-index-url https://pypi.org/simple/ \
+    axelera-rt'
+```
+
+Then verify:
+
+```bash
+ssh root@<BOARD_IP> 'axdevice'
+```
+
+Expected output (example from a working Grinn Genio700 + Metis M.2 1 GiB):
+
+```
+Device 0: metis-0:1:0  1GiB m2  flver=1.4.0 bcver=7.0  clock=800MHz(0-3:800MHz)  mvm=0-3:100%
+```
+
+That's a fully operational Metis. From here any Voyager SDK Python workload
+that opens `/dev/metis-*` will run.
+
 ## Quick start — rebuild `metis.ko` from sources
 
 On an Ubuntu 22.04 build host (or WSL):
