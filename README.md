@@ -1,5 +1,8 @@
 # Axelera Metis driver for Grinn Genio700 SBC
 
+<img width="849" height="559" alt="WhatsApp Image 2026-04-28 at 13 22 09" src="https://github.com/user-attachments/assets/9cb875f4-e6d9-4aa9-8352-726bce8d4625" />
+
+
 Working driver + install package for the **Axelera Metis M.2 AI accelerator
 card (PCI `1f9d:1100`)** running on the **Grinn Genio700 SBC** with the
 **MediaTek Genio BSP 5.15.47 kernel** (Yocto kirkstone image,
